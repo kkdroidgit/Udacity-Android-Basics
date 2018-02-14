@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="in.paperwrk.happybirthday.MainActivity">
 
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/birthday_card"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Birthday card" />
+
+
+
     <TextView
+        android:padding="20dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="36sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Happy Birthday to the Viewer!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Happy Birthday to the Viewer!"/>
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:textColor="#ffff"
+        android:padding="20dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Kartik Shandilya"/>
+
+</RelativeLayout>
