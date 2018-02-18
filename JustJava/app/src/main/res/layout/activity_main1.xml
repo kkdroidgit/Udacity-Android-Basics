@@ -1,0 +1,32 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_weight="1"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="center" />
+
+    <TextView
+        android:layout_weight="0"
+        android:text="You're invited!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="54sp"
+        android:background="#009688" />
+
+    <TextView
+        android:layout_weight="0"
+        android:text="Bonfire at the beach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        android:background="#009688" />
+
+</LinearLayout>
