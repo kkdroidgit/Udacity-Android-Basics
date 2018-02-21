@@ -8,14 +8,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView quantityTextView;
     ImageView imageView;
+    Spinner spinner;
     TextView priceTextView;
+    int espressoPrice = 15;
+    int machPrice = 26;
+    int ristPrice = 18;
+    int cappPrice = 30;
+
+    int quantity = 0;
     String[] arrayCoffee = new String[]{
-            "No Selection","Espresso", "Short Macchiato", "Ristretto","Cappuccino"
+            "Select a Coffee of your choice","Espresso", "Short Macchiato", "Ristretto","Cappuccino"
     };
 
     @Override
@@ -23,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner = findViewById(R.id.spinner_coffee);
+        spinner = findViewById(R.id.spinner_coffee);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,arrayCoffee);
@@ -40,24 +50,28 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position){
                     case 1:
+                        quantityTextView.setText(0+"");
+                        priceTextView.setText("$ 0");
                         imageView.setImageResource(R.drawable.espresso);
-                        quantityTextView.setText("1");
-                        priceTextView.setText("$15");
+                        quantity = 0;
                         break;
                     case 2:
+                        quantityTextView.setText(0+"");
+                        priceTextView.setText("$ 0");
                         imageView.setImageResource(R.drawable.machito);
-                        quantityTextView.setText("1");
-                        priceTextView.setText("$26");
+                        quantity = 0;
                         break;
                     case 3:
+                        quantityTextView.setText(0+"");
+                        priceTextView.setText("$ 0");
                         imageView.setImageResource(R.drawable.ristereto);
-                        quantityTextView.setText("1");
-                        priceTextView.setText("$18");
+                        quantity = 0;
                         break;
                     case 4:
+                        quantityTextView.setText(0+"");
+                        priceTextView.setText("$ 0");
                         imageView.setImageResource(R.drawable.cappuccino);
-                        quantityTextView.setText("1");
-                        priceTextView.setText("$30");
+                        quantity = 0;
                         break;
                     default: break;
                 }
@@ -71,46 +85,64 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*
-
-    */
-/**
-     * This method is called when the order button is clicked.
-     *//*
-
     public void submitOrder(View view) {
-        int quantity = 1;
-        display(quantity);
-        displayPrice(quantity * 5);
+        Toast.makeText(this,"Order Processing!",Toast.LENGTH_SHORT).show();
     }
-
-    */
-/**
-     * This method displays the given quantity value on the screen.
-     *//*
 
     private void display(int number) {
         quantityTextView.setText("" + number);
     }
-
-    */
-/**
-     * This method displays the given price on the screen.
-     *//*
 
     private void displayPrice(int number) {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
     public void increment(View view) {
-        int quantity = 3;
-        display(quantity);
+        if(spinner.getSelectedItem() == "No Selection"){
+            Toast.makeText(MainActivity.this,"Action Invalid",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            quantity++;
+            display(quantity);
+            switch (spinner.getSelectedItemPosition()){
+                case 1 :
+                    displayPrice(quantity*espressoPrice);
+                    break;
+                case 2 :
+                    displayPrice(quantity*machPrice);
+                    break;
+                case 3 :
+                    displayPrice(quantity*ristPrice);
+                    break;
+                case 4 :
+                    displayPrice(quantity*cappPrice);
+                    break;
+            }
+        }
     }
 
     public void decrement(View view) {
-        int quantity = 1;
-        display(quantity);
+        if(spinner.getSelectedItem() == "No Selection"){
+            Toast.makeText(MainActivity.this,"Action Invalid",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            quantity--;
+            display(quantity);
+            switch (spinner.getSelectedItemPosition()){
+                case 1 :
+                    displayPrice(quantity*espressoPrice);
+                    break;
+                case 2 :
+                    displayPrice(quantity*machPrice);
+                    break;
+                case 3 :
+                    displayPrice(quantity*ristPrice);
+                    break;
+                case 4 :
+                    displayPrice(quantity*cappPrice);
+                    break;
+            }
+        }
     }
-*/
 
 }

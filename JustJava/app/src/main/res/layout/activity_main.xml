@@ -19,7 +19,7 @@
             android:textColor="#000"
             android:textSize="20sp"
             android:gravity="center"
-            android:text="Cup o' Joe"
+            android:text="@string/cup_o_joe"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -27,7 +27,7 @@
 
 
     <Spinner
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="@dimen/spinner_margin"
         android:id="@+id/spinner_coffee"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
@@ -39,14 +39,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_10"
             android:scaleType="centerCrop"
             android:src="@drawable/cappuccino"
             android:layout_width="wrap_content"
-            android:layout_height="200dp" />
+            android:layout_height="@dimen/coffe_image_height" />
 
         <View
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_10"
             android:layout_below="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -56,12 +56,15 @@
 
     <RelativeLayout
         android:id="@+id/relLayout"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="26dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
             android:textColor="#000"
             android:textSize="20sp"
             android:id="@+id/qtv"
@@ -70,26 +73,27 @@
             android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity"/>
+            android:text="@string/quantity"/>
 
         <Button
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:onClick="increment"
             android:id="@+id/increment"
-            android:text="+"
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
+            android:text="@string/increment"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size" />
 
         <TextView
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_10"
             android:layout_toLeftOf="@+id/increment"
+            android:layout_toStartOf="@+id/increment"
             android:textColor="@android:color/black"
             android:textSize="26sp"
             android:id="@+id/quantity_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"/>
+            android:text="@string/quantity_tv"/>
 
         <Button
             android:layout_marginEnd="10dp"
@@ -98,19 +102,28 @@
             android:layout_toStartOf="@+id/quantity_text_view"
             android:onClick="decrement"
             android:id="@+id/decrement"
-            android:text="-"
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
+            android:text="@string/decrement"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size" />
+
 
     </RelativeLayout>
 
-
+    <View
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
 
     <RelativeLayout
+        android:layout_marginTop="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_12"
+            android:layout_marginStart="@dimen/margin_12"
             android:textColor="#000"
             android:textSize="20sp"
             android:layout_alignParentLeft="true"
@@ -119,20 +132,20 @@
             android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Price"/>
+            android:text="@string/price"/>
 
         <TextView
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margin_16"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:id="@+id/price_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$0"/>
+            android:text="@string/price_tv"/>
 
     </RelativeLayout>
 
@@ -152,7 +165,7 @@
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Order Now"/>
+            android:text="@string/order_now"/>
 
     </RelativeLayout>
 

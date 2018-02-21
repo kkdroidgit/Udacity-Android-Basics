@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Just Java</string>
+    <string name="cup_o_joe">Cup o\' Joe</string>
+    <string name="order_now">Order Now</string>
+    <string name="price_tv">$0</string>
+    <string name="price">Price</string>
+    <string name="decrement">-</string>
+    <string name="quantity_tv">0</string>
+    <string name="increment">+</string>
+    <string name="quantity">Quantity</string>
 </resources>
