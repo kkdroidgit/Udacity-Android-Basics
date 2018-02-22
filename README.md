@@ -7,8 +7,6 @@ Android Basics courses on Udacity
 ### Happy Birthday App.
 The app is a single page Birthday Card. 
 
-<img src="http://i.imgur.com/P2A8vBE.png" width="270">
-
 
 ## App 2: [Build a Single Screen App](https://github.com/kkdroidgit/Udacity-Android-Basics/tree/master/UdacityAndroid)
 ### UdacityAndroid.
